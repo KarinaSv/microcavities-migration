@@ -3,6 +3,16 @@
 import math
 import random
 
+#Константы
+r = 0.7 #радиус микрополости
+R = 0.3 #радиус наполнителя
+mol_R = 0.7 #радиус макромолекул полимера
+border = 10 #граница области
+Try = 100  # количество попыток движений микропоры
+volume_cavity = 4 * math.pi * r ** 3 / 3 #объем полости
+distance = 5 * R #расстояние между наполнителями
+count = 10 ** 4
+
 class Sphere:
     def __init__(self, x, y, z, radius):
         self.x = x
@@ -165,17 +175,6 @@ def old_koord(x0, y0, z0):
     old_y0 = y0
     old_z0 = z0
     return old_x0, old_y0, old_z0
-
-#Константы
-r = 0.7 #радиус микрополости
-R = 0.3 #радиус наполнителя
-mol_R = 0.7 #радиус макромолекул полимера
-border = 10 #граница области
-Try = 100  # количество попыток движений микропоры
-volume_cavity = 4 * math.pi * r ** 3 / 3 #объем полости
-distance = 5 * R #расстояние между наполнителями
-count = 10 ** 4
-
 
 def main():
     file_micropore = open('Micropore.txt', 'w')
