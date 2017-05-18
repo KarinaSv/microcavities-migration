@@ -29,7 +29,7 @@ def micropore(border, microradius):
     return x, y, z
 
 #Розыгрыш координат конца вектора свободного пробега
-def probeg(border, R):
+def line(border, R):
     x = border * random.random()
     y = border * random.random()
     z = (border + 2 * R) * random.random()
@@ -216,7 +216,7 @@ def main():
     cross_number_mol = 1000
     capture = 0
     for i in range(1, Try):
-        xk, yk, zk = probeg(border, r)
+        xk, yk, zk = line(border, r)
         for index, fil in enumerate(filler_list):
             cross_filler = 10 ** 4
             if index != cross_number_filler:
